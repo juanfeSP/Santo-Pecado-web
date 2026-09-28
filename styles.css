@@ -192,6 +192,77 @@ img { display: block; max-width: 100%; }
   background: var(--brass);
 }
 
+/* ---------- Secondary page hero ---------- */
+
+.page-hero {
+  background: var(--wine-dark);
+  padding: clamp(150px, 20vh, 220px) clamp(20px, 5vw, 56px) clamp(60px, 8vh, 90px);
+  text-align: center;
+}
+.page-hero-inner { max-width: 680px; margin: 0 auto; }
+.page-hero h1 {
+  color: var(--cream);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin-bottom: 14px;
+}
+.hero-copy-dark { color: rgba(247,241,234,0.8); margin: 0; font-size: 1.05rem; }
+.page-hero .eyebrow-script { justify-content: center; display: block; }
+
+/* ---------- Cupcakes page ---------- */
+
+.flavor-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.flavor-chip {
+  border: 1px solid var(--line);
+  padding: 22px 24px;
+}
+.flavor-chip h3 { font-size: 1.15rem; margin-bottom: 6px; }
+.flavor-chip p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+
+.cc-pricing {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 60px;
+}
+.cc-price-card {
+  padding: 28px 26px;
+  background: var(--cream-alt);
+}
+.cc-price-card.featured { background: var(--wine-dark); }
+.cc-price-card h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.cc-price-card.featured h3 { color: var(--cream); }
+.cc-price-card p { color: var(--ink-soft); margin: 0 0 18px; font-size: 0.95rem; }
+.cc-price-card.featured p { color: rgba(247,241,234,0.8); }
+.cc-price-card .price { font-size: 1.5rem; }
+.cc-price-card.featured .price { color: var(--rose); }
+.cc-price-card .price small { font-family: 'Work Sans', sans-serif; font-style: normal; font-size: 0.85rem; color: var(--ink-soft); }
+.cc-price-card.featured .price small { color: rgba(247,241,234,0.65); }
+
+.gallery-head { margin-bottom: 24px; }
+.gallery-head h3 { font-size: 1.3rem; margin-bottom: 6px; }
+.gallery-head p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
+
+.cc-gallery {
+  columns: 3 220px;
+  column-gap: 14px;
+  margin-bottom: 44px;
+}
+.cc-gallery img {
+  width: 100%;
+  margin-bottom: 14px;
+  break-inside: avoid;
+}
+
+.btn-primary-dark { background: var(--wine); color: var(--cream); }
+.btn-primary-dark:hover { background: var(--wine-dark); }
+.btn-ghost-dark { border: 1px solid var(--wine); color: var(--wine); margin-top: 8px; }
+.btn-ghost-dark:hover { background: var(--wine); color: var(--cream); }
+
 /* ---------- Sections generic ---------- */
 
 .section {
@@ -238,6 +309,8 @@ img { display: block; max-width: 100%; }
 .price { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--wine); }
 .price-inline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--wine); }
 .note { margin-top: 34px; color: var(--ink-soft); font-size: 0.95rem; }
+.inline-link { color: var(--wine); border-bottom: 1px solid var(--rose); }
+.inline-link:hover { border-bottom-color: var(--wine); }
 
 /* ---------- De la Casa (tortas) ---------- */
 
@@ -377,6 +450,9 @@ img { display: block; max-width: 100%; }
   .nav-cta { align-self: flex-start; }
 
   .detalles-grid { grid-template-columns: 1fr; }
+  .flavor-row { grid-template-columns: 1fr; }
+  .cc-pricing { grid-template-columns: 1fr; }
+  .cc-gallery { columns: 2 160px; }
   .cookie-row { grid-template-columns: repeat(2, 1fr); }
   .cake-grid { grid-template-columns: 1fr; }
   .cake-grid .cake-card:last-child { grid-column: auto; }
