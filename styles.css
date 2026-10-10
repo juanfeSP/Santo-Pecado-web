@@ -251,16 +251,6 @@ img { display: block; max-width: 100%; }
 .gallery-head h3 { font-size: 1.3rem; margin-bottom: 6px; }
 .gallery-head p { margin: 0; color: var(--ink-soft); font-size: 0.92rem; }
 
-.cc-gallery {
-  columns: 3 220px;
-  column-gap: 14px;
-  margin-bottom: 44px;
-}
-.cc-gallery img {
-  width: 100%;
-  margin-bottom: 14px;
-  break-inside: avoid;
-}
 
 .btn-primary-dark { background: var(--wine); color: var(--cream); }
 .btn-primary-dark:hover { background: var(--wine-dark); }
@@ -500,7 +490,6 @@ img { display: block; max-width: 100%; }
   .detalles-grid { grid-template-columns: 1fr; }
   .flavor-row { grid-template-columns: 1fr; }
   .cc-pricing { grid-template-columns: 1fr; }
-  .cc-gallery { columns: 2 160px; }
   .cookie-row { grid-template-columns: repeat(2, 1fr); }
   .cake-grid { grid-template-columns: 1fr; }
   .cake-grid .cake-card:last-child { grid-column: auto; }
@@ -523,3 +512,47 @@ img { display: block; max-width: 100%; }
 .footer-place { opacity: 0.85; font-size: 0.95rem; }
 @media (max-width: 900px) { .how-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 720px) { .how-grid { grid-template-columns: 1fr; } }
+
+/* ---------- Galería de cupcakes por grupos ---------- */
+
+.cc-group { margin-bottom: 52px; }
+.cc-group-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin-bottom: 16px;
+}
+.cc-group-head h4 { font-family: 'Prata', serif; font-weight: 400; font-size: 1.15rem; margin: 0; }
+.cc-group-head p { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
+.cc-tiles { display: grid; gap: 12px; }
+.cc-tiles img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+.cc-tiles.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.cc-tiles.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.cc-tiles.bento { grid-template-columns: repeat(6, 1fr); }
+.cc-tiles.bento img { grid-column: span 2; }
+.cc-tiles.bento img.wide { grid-column: span 3; aspect-ratio: 3 / 2; }
+
+.pos-block {
+  margin-top: 48px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+}
+.pos-block h3 { font-size: 1.2rem; margin-bottom: 6px; }
+.pos-block p { margin: 0; color: var(--ink-soft); max-width: 56ch; }
+
+@media (max-width: 720px) {
+  .cc-tiles.cols-4, .cc-tiles.cols-3 { grid-template-columns: repeat(2, 1fr); }
+  .cc-tiles.bento { grid-template-columns: repeat(2, 1fr); }
+  .cc-tiles.bento img { grid-column: auto; }
+  .cc-tiles.bento img.wide, .cc-tiles.bento img.feat { grid-column: span 2; }
+  .cc-tiles.bento img.feat { aspect-ratio: 3 / 2; }
+  .cc-tiles .o1 { order: 1; } .cc-tiles .o2 { order: 2; } .cc-tiles .o3 { order: 3; }
+  .cc-tiles .o4 { order: 4; } .cc-tiles .o5 { order: 5; }
+}
