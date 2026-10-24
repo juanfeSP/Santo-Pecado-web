@@ -9,8 +9,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prata&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="preload" as="image" href="assets/hero-cupcakes.jpg">
+<script>
+(function () {
+  var d = document.documentElement, skip = false;
+  try {
+    if (location.hash) skip = true;
+    if (document.referrer && new URL(document.referrer).origin === location.origin) skip = true;
+  } catch (e) {}
+  d.classList.add(skip ? 'no-intro' : 'intro-on');
+})();
+</script>
 </head>
 <body>
+
+<div class="intro-gate" id="introGate">
+  <img class="intro-bg" src="assets/hero-cupcakes.jpg" alt="" fetchpriority="high">
+  <div class="intro-scrim"></div>
+  <div class="intro-content">
+    <img class="intro-logo" src="assets/logo-light.png" alt="Santo Pecado Pastelería">
+  </div>
+  <div class="intro-bottom">
+    <button class="intro-prompt" id="introEnter" type="button" aria-label="Desliza para entrar a la página">
+      <span class="intro-prompt-text">Desliza</span>
+      <span class="intro-chevron" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
 
 <header class="site-header" id="siteHeader">
   <a href="#top" class="wordmark">
@@ -97,6 +122,45 @@
     </div>
   </section>
 
+  <section class="season" id="temporada">
+    <div class="season-inner">
+      <div class="season-head">
+        <span class="season-badge">Edición de temporada</span>
+        <h2>Colección Halloween</h2>
+        <p>Dos galletas de temporada que se comen con ganas: una llena de misterio y otra con sabor a otoño.</p>
+        <div class="season-ornament" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 3c.8 5.4 3.6 8.2 9 9-5.4.8-8.2 3.6-9 9-.8-5.4-3.6-8.2-9-9 5.4-.8 8.2-3.6 9-9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M5 19.5C5 10.5 10.5 5 19.5 4.5 19 13.5 13.5 19.5 5 19.5zM5 19.5c3.5-4.5 6-7 10-9.5"/></svg>
+        </div>
+      </div>
+
+      <div class="season-grid">
+        <article class="season-card truco">
+          <div class="season-img"><img src="assets/temporada-dulce-truco.jpg" alt="Galleta Dulce Truco de vainilla con chips morados flotando sobre un caldero con humo lila" loading="lazy" width="900" height="900"></div>
+          <div class="season-body">
+            <svg class="season-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7z"/></svg>
+            <h3>Dulce Truco</h3>
+            <p class="season-line">Un misterio en cada mordida.</p>
+            <p>Una galleta de vainilla con un toque inesperado, chocolate en cada bocado y un secreto que preferimos dejar en tus manos.</p>
+            <a href="https://wa.me/573219561364?text=Hola%20Santo%20Pecado%2C%20quiero%20pedir%20la%20galleta%20de%20temporada%20Dulce%20Truco" class="btn" target="_blank" rel="noopener">Pedir Dulce Truco</a>
+          </div>
+        </article>
+
+        <article class="season-card otono">
+          <div class="season-img"><img src="assets/temporada-otono.jpg" alt="Galleta Otoño con trozos de chocolate flotando sobre un caldero con canela y hojas secas" loading="lazy" width="900" height="900"></div>
+          <div class="season-body">
+            <svg class="season-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19.5C5 10.5 10.5 5 19.5 4.5 19 13.5 13.5 19.5 5 19.5zM5 19.5c3.5-4.5 6-7 10-9.5"/></svg>
+            <h3>Otoño</h3>
+            <p class="season-line">El otoño también se muerde.</p>
+            <p>Una galleta inspirada en los tonos y aromas del otoño, con el carácter de la calabaza, el abrazo de las especias y generosos trozos de chocolate.</p>
+            <a href="https://wa.me/573219561364?text=Hola%20Santo%20Pecado%2C%20quiero%20pedir%20la%20galleta%20de%20temporada%20Oto%C3%B1o" class="btn" target="_blank" rel="noopener">Pedir Otoño</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="section alt" id="de-la-casa">
     <div class="section-head">
       <h2>De la Casa</h2>
@@ -111,8 +175,8 @@
           <h3>Pastel de Lemon Blueberry</h3>
           <p>Pastel suave de limón con arándanos, relleno de compota de frutos del bosque, crema ligera de queso y crema de frutos rojos.</p>
           <ul class="cake-sizes">
-            <li><span>10 porciones</span><span class="price-slot">$86.000</span></li>
-            <li><span>20 porciones</span><span class="price-slot">$120.000</span></li>
+            <li><span>10 porciones</span><span class="price-slot">$</span></li>
+            <li><span>20 porciones</span><span class="price-slot">$</span></li>
           </ul>
         </figcaption>
       </figure>
@@ -123,8 +187,8 @@
           <h3>Pastel de Zanahoria</h3>
           <p>Torta especiada y húmeda que recuerda los sabores de casa, con frosting de queso, decorada con frutos secos y zanahorias dulces.</p>
           <ul class="cake-sizes">
-            <li><span>10 porciones</span><span class="price-slot">$52.000</span></li>
-            <li><span>20 porciones</span><span class="price-slot">$98.000</span></li>
+            <li><span>10 porciones</span><span class="price-slot">$</span></li>
+            <li><span>20 porciones</span><span class="price-slot">$</span></li>
           </ul>
         </figcaption>
       </figure>
@@ -135,8 +199,8 @@
           <h3>Doble Chocolate Cake</h3>
           <p>Pastel chocolatoso de miga húmeda, con ganache semiamarga de chocolate real y decoración clásica.</p>
           <ul class="cake-sizes">
-            <li><span>10 porciones</span><span class="price-slot">$60.000</span></li>
-            <li><span>20 porciones</span><span class="price-slot">$104.000</span></li>
+            <li><span>10 porciones</span><span class="price-slot">$</span></li>
+            <li><span>20 porciones</span><span class="price-slot">$</span></li>
           </ul>
         </figcaption>
       </figure>
@@ -169,12 +233,33 @@
   <section class="feature" id="a-medida">
     <div class="section-head light">
       <h2>A Medida</h2>
-      <p>Pasteles con decoración personalizada y cupcakes de diseño, hechos para tu ocasión.</p>
+      <p>Pasteles con decoración personalizada, creados para tu ocasión.</p>
     </div>
     <div class="medida-grid">
       <figure><img src="assets/amedida-rainbow.jpg" alt="Torta personalizada de dibujo animado con capas de colores del arcoíris" loading="lazy"></figure>
       <figure><img src="assets/amedida-azulejo.jpg" alt="Torta personalizada con estampado de azulejos y flores frescas" loading="lazy"></figure>
       <figure><img src="assets/amedida-ruffle.jpg" alt="Torta personalizada con volantes de crema y fresas frescas" loading="lazy"></figure>
+    </div>
+    <div class="medida-info">
+      <div class="medida-flavors">
+        <h3>Elige tu sabor</h3>
+        <ul class="flavor-list">
+          <li>Naranja Amapola</li>
+          <li>Limón Amapola</li>
+          <li class="is-new">Maracuyá Amapola <span class="new-tag">Nuevo</span></li>
+          <li>Café</li>
+        </ul>
+      </div>
+      <div class="medida-terms">
+        <div class="term">
+          <h4>Bajo encargo</h4>
+          <p>Cada pastel se prepara por pedido, con mínimo 2 días de anticipación.</p>
+        </div>
+        <div class="term">
+          <h4>Un valor para cada diseño</h4>
+          <p>El precio cambia según el tipo de decoración que elijas. Cuéntanos tu idea y te cotizamos.</p>
+        </div>
+      </div>
     </div>
     <a href="https://wa.me/573219561364?text=Hola%2C%20quiero%20cotizar%20un%20pastel%20a%20medida" class="btn btn-light" target="_blank" rel="noopener">Cotiza tu diseño</a>
   </section>
