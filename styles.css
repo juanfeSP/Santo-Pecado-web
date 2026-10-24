@@ -693,3 +693,40 @@ html.intro-on, html.intro-on body { overflow: hidden; height: 100%; }
 @media (max-width: 720px) {
   .season-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- Merengues de temporada y torta no disponible ---------- */
+
+.season-card.merengue { --c-bg: #F2E1D2; --c-text: var(--ink); --c-soft: var(--ink-soft); --c-accent: var(--wine); --glow: rgba(205,166,162,0.38); }
+.season-wide { grid-column: 1 / -1; flex-direction: row; }
+.season-mosaic {
+  flex: 0 0 min(46%, 520px);
+  display: grid;
+  grid-template-columns: 9fr 8fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px;
+  aspect-ratio: 17 / 16;
+}
+.season-mosaic img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 0; }
+.season-mosaic img:first-child { grid-row: 1 / span 2; }
+.season-wide .season-body { justify-content: center; }
+.season-card p.season-price { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.8rem; color: var(--c-accent); margin-top: 6px; max-width: none; }
+.season-card p.season-price small { font-size: 1.05rem; color: var(--c-soft); }
+
+.cake-card.is-unavailable { position: relative; }
+.cake-card.is-unavailable img { filter: grayscale(0.5); opacity: 0.7; }
+.cake-flag {
+  position: absolute;
+  top: 14px; left: 14px;
+  z-index: 2;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+.cake-sizes li.is-off .price-slot { color: var(--ink-soft); font-size: 1.05rem; }
+
+@media (max-width: 720px) {
+  .season-wide { flex-direction: column; }
+  .season-mosaic { flex: none; width: 100%; }
+}
